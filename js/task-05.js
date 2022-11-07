@@ -3,8 +3,14 @@ const refs = {
   output: document.querySelector("#name-output"),
 };
 
-refs.input.addEventListener("input", onInputChange);
+const onInputChange = (event) => {
+  const inputValue = event.currentTarget.value;
+  // output = input value
+  if (inputValue === "") {
+    refs.output.textContent = "Anonymous";
+  } else {
+    refs.output.textContent = inputValue;
+  }
+};
 
-function onInputChange(event) {
-  refs.output.textContent = event.currentTarget.value;
-}
+refs.input.addEventListener("input", onInputChange);
