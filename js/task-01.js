@@ -1,14 +1,12 @@
 // get number of categories
-const countCategories = document.querySelectorAll(".item");
-console.log("Number of categories:", countCategories.length);
+const items = document.querySelectorAll(".item");
+console.log("Number of categories:", items.length);
 
-// get children names
-const categoryName = document
-  .querySelectorAll(".item h2")
-  .forEach((element) => console.log("Category:", element.textContent));
+// get children names and elements number
+items.forEach((item) => {
+  const name = item.querySelector("h2");
+  console.log("Category: ", name.textContent);
 
-for (let li of document.querySelectorAll(".item")) {
-  // get descendants count
-  let count = li.querySelectorAll("li").length;
-  console.log("Elements:", count);
-}
+  const count = item.querySelectorAll("li").length;
+  console.log("Elements: ", count);
+});
