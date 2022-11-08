@@ -1,6 +1,8 @@
-slider.oninput = () => {
-  const slider = document.querySelector("#font-size-control");
-  const text = document.querySelector("#text");
+const fontSizeSlider = document.querySelector("#font-size-control");
+const pageContent = document.querySelector("#text");
 
-  text.innerHTML = slider.value;
+const changeFontSize = (event) => {
+  pageContent.style.fontSize = event.currentTarget.value + "px";
 };
+
+fontSizeSlider.addEventListener("input", changeFontSize);
